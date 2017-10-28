@@ -1,0 +1,78 @@
+.apptitle {
+    color:#EC644B;
+    font-weight: bold;
+    margin: 40px auto;
+}
+
+
+p {
+ font-size:20;
+ padding-left: 6px;
+
+}
+span {
+    cursor: pointer;
+}
+.big-checkbox {
+    width: 20px;
+     height: 20px;
+      margin-top: 2px;
+}
+     .selectall-checkbox {
+        margin-left: 20px; 
+    }
+
+.complete {
+      text-decoration: line-through;
+      color: #26A65B;
+}
+
+.done {
+    color: #26A65B;
+}
+
+.notcomplete {
+    text-decoration:none;
+}
+.fa-trash {
+
+}
+.fa-trash:hover {
+     color : #EC644B;
+}
+
+.todocontainer {
+    padding: 5px 0;
+    border: 1px solid #F2F1EF;
+    margin: 8px 0;
+    text-align: justify;
+    background-color: #F2F1EF;
+    border-radius: 5px;
+}
+
+.todocontainer:hover {
+    border: 1px solid #ECF0F1;
+}
+
+
+.active,h4,h2,.validation {
+    color : #EC644B;
+}
+
+.listtopbar {
+  
+}
+.listtopbar span {
+    padding-right:16px;
+}
+
+.text-container {
+    font-size: 16px;
+    text-align: justify;
+    padding-left: 10px;
+}
+.alert p {
+    margin: 0;
+    padding: 0;
+}
+

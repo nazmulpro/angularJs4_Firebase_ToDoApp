@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 apptitle">
+           <h2 class="text-center">Simple ToDo Application</h2>
+     </div>
+    <div class="col-sm-12">
+      <form #f="ngForm" novalidate>
+      <div class="from-group">
+        <input class="form-control"   name="title" #title="ngModel"  [(ngModel)]="todo.title" (keyup.enter)="addToDo(f)" required>
+         <div  *ngIf="title.errors?.required && title.touched"  class="validation">
+            required
+      </div>
+      </div>
+     
+    </form>
+         <br>
+    </div>
+        <div class="col-sm-12">
+          <h4 *ngIf="(todos.length - totalCompleteTodo) > 0"> <strong> {{todos.length - totalCompleteTodo}} task left </strong></h4>
+          <h4 *ngIf="(todos.length - totalCompleteTodo) === 0"> <strong> No task left </strong></h4>
+        </div>
+        
+          <div class="col-sm-4" *ngIf="todos.length > 0">
+            <div class="checkbox">
+            <label>
+                <input  class="big-checkbox selectall-checkbox"  type="checkbox"  [checked]="isSelectAllEnable"   (change)="selectAllTaskComplete()"> 
+            </label>
+          </div>
+          </div>
+          <div class="col-sm-8">
+                <div class="float-right" >
+                  <span class="pr-2" *ngIf="totalCompleteTodo > 0" (click)="viewFilterTodo()" [class.active]="filterBy===undefined"><i class="fa fa-list" aria-hidden="true"></i> All</span>
+                  <span class="pr-2" *ngIf="(todos.length - totalCompleteTodo) > 0" (click)="viewFilterTodo(false)" [class.active]="filterBy===false"><i class="fa fa-tasks" aria-hidden="true"></i> Active</span>
+                  <span class="pr-2" *ngIf="totalCompleteTodo > 0"  (click)="viewFilterTodo(true)" [class.done]="filterBy===true"><i class="fa fa-check-circle-o" aria-hidden="true"></i> Completed</span>
+                  <span *ngIf="totalCompleteTodo > 0" (click)="deleteAllCompletedTask()"><i class="fa fa-trash" aria-hidden="true" ></i> Clear completed</span>
+              </div>
+          </div>
+       
+        <div class="col-sm-12">
+          <div class="list-group">
+           <div class="list-group-item"   *ngFor="let todo of todos  | todofilter:filterBy">
+              <div class="checkbox float-left">
+                  <label>
+                <input class="big-checkbox" type="checkbox" [checked]="todo.isComplete"   (change)="completeTodo(todo)"> 		
+                </label>
+              </div>
+			        
+			        <div class="float-left form-control-inline text-container" [ngClass]="{'complete': todo.isComplete , 'notcomplete': !todo.isComplete}">
+					         {{todo.title}}
+			        </div>
+
+               <span class="float-right" (click)="removeTodo(todo.$key)"><i class="fa fa-trash" aria-hidden="true" ></i></span>
+			        
+			        <div class="clearfix"></div>
+			    </div>
+         </div>
+     </div>
+
+    
+  </div>
+</div>
