@@ -13,7 +13,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
  - npm install font-awesome
  - ng serve --open
 
-## add your firebase config in app.module.ts file
+## Add your firebase config in app.module.ts file
 
 ```
 export const angularFireConfig  = {
