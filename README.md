@@ -1,4 +1,4 @@
-# TodoApp
+# Angularjs 4 + Firebase Todo App
 
 A Todo app built with Angularjs 4 and firebase 
 
